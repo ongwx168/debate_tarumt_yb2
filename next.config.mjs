@@ -13,9 +13,9 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://www.canva.com https://*.canva.com https://*.canva-apps.com https://iframely.com;"
+            // UPDATED: Added extra Iframely and Canva domains to ensure the iframe renders
+            value: "frame-ancestors 'self' https://www.canva.com https://*.canva.com https://*.canva-apps.com https://iframely.com https://*.iframely.com https://iframe.ly https://*.iframe.ly;"
           },
-          // ADD THIS: Overrides Next.js's default SAMEORIGIN block
           {
             key: 'X-Frame-Options',
             value: 'ALLOWALL'
