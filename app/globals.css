@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+
+  --color-pro: var(--pro);
+  --color-pro-foreground: var(--pro-foreground);
+  --color-pro-soft: var(--pro-soft);
+  --color-con: var(--con);
+  --color-con-foreground: var(--con-foreground);
+  --color-con-soft: var(--con-soft);
+
+  --font-sans: var(--font-noto-sans-sc), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  color-scheme: dark;
+
+  --background: #17092b;
+  --foreground: #f5f0ff;
+
+  --card: #241041;
+  --card-foreground: #f5f0ff;
+
+  --muted: #2f1a4d;
+  --muted-foreground: #b9a7d8;
+
+  --border: #ffffff26;
+  --ring: #ff3884;
+
+  --primary: #5a23a4;
+  --primary-foreground: #ffffff;
+  --secondary: #2f1a4d;
+  --secondary-foreground: #f5f0ff;
+  --accent: #2f1a4d;
+  --accent-foreground: #f5f0ff;
+  --destructive: #ff3884;
+
+  /* 正方 — 紫 */
+  --pro: #5a23a4;
+  --pro-foreground: #ffffff;
+  --pro-soft: #5a23a433;
+
+  /* 反方 — 粉 */
+  --con: #ff3884;
+  --con-foreground: #2a0716;
+  --con-soft: #ff388433;
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-pop-in {
+  animation: pop-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
