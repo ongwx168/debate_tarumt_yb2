@@ -14,6 +14,11 @@ const nextConfig = {
           {
             key: 'Content-Security-Policy',
             value: "frame-ancestors 'self' https://www.canva.com https://*.canva.com https://*.canva-apps.com https://iframely.com;"
+          },
+          // ADD THIS: Overrides Next.js's default SAMEORIGIN block
+          {
+            key: 'X-Frame-Options',
+            value: 'ALLOWALL'
           }
         ],
       },
@@ -21,4 +26,4 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
+export default nextConfig;
